@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "plugins": [
+        "@html-eslint",
+        "prettier"
+    ],
+    "overrides": [
+        {
+            "files": "*.html",
+            "parser": "@html-eslint/parser",
+            "extends": [
+                "plugin:@html-eslint/recommended"
+            ],
+            "rules": {
+                "@html-eslint/require-img-alt": 0
+            }
+        }
+    ],
+    "extends": [
+        "eslint:recommended",
+        "prettier"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "prettier/prettier": 2
+    }
+}
