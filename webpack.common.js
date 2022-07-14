@@ -13,9 +13,9 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {
     entry: {
         index: ["./src/css/style.css", "./src/js/home.js"],
-        product: ["./src/css/product.css"],
-        cart: ["./src/css/cart.css"],
-        confirmation: ["./src/css/confirmation.css"]
+        product: ["./src/css/style.css", "./src/css/product.css"],
+        cart: ["./src/css/style.css", "./src/css/cart.css"],
+        confirmation: ["./src/css/style.css", "./src/css/confirmation.css"]
     },
     mode: "development",
     devtool: "source-map",
@@ -54,6 +54,7 @@ module.exports = {
             return new HtmlWebpackPlugin({
                 template: `./public/${name}`,
                 filename: `${name}`,
+                scriptLoading: "blocking",
                 chunks: [`${name.replace(".html", "")}`]
             });
         }),
