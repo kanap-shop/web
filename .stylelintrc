@@ -19,6 +19,6 @@
                 ]
             }
         ],
-        "no-descending-specificity": 0
+        "no-descending-specificity": null
     }
 }
