@@ -13,7 +13,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {
     entry: {
         index: ["./src/css/style.css", "./src/js/home.js"],
-        product: ["./src/css/style.css", "./src/css/product.css"],
+        product: ["./src/css/style.css", "./src/css/product.css", "./src/js/product.js"],
         cart: ["./src/css/style.css", "./src/css/cart.css"],
         confirmation: ["./src/css/style.css", "./src/css/confirmation.css"]
     },

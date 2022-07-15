@@ -54,49 +54,38 @@
             <div class="limited-width-block">
                 <section class="item">
                     <article>
-                        <div class="item-img">
-                            <!-- <img src="../images/logo.webp" alt="Photographie d'un canapé"> -->
-                        </div>
+                        <div class="item-img" id="product-image"></div>
                         <div class="item-content">
-
-                            <div class="item-content-title-price">
-                                <h1 id="title">
-                                    <!-- Nom du produit -->
-                                </h1>
+                            <div class="item-content-titlePrice">
+                                <h1 id="title"></h1>
                                 <p>
-                                    Prix : <span id="price">
-                                        <!-- 42 -->
-                                    </span>€
+                                    Prix : <span id="price"></span>€
                                 </p>
                             </div>
-
+    
                             <div class="item-content-description">
                                 <p class="item-content-description-title">Description :</p>
                                 <p id="description">
-                                    <!-- Dis enim malesuada risus sapien gravida nulla nisl arcu. -->
                                 </p>
                             </div>
-
+    
                             <div class="item-content-settings">
                                 <div class="item-content-settings-color">
                                     <label for="color-select">Choisir une couleur :</label>
                                     <select name="color-select" id="colors">
                                         <option value="">--SVP, choisissez une couleur --</option>
-                                        <!--                       <option value="vert">vert</option>
-                                            <option value="blanc">blanc</option> -->
                                     </select>
                                 </div>
-
+    
                                 <div class="item-content-settings-quantity">
                                     <label for="itemQuantity">Nombre d'article(s) (1-100) :</label>
-                                    <input type="number" name="itemQuantity" min="1" max="100" value="0" id="quantity">
+                                    <input type="number" name="itemQuantity" min="1" max="100" value="1" id="quantity">
                                 </div>
                             </div>
-
+    
                             <div class="item-content-add-button">
-                                <button id="addToCart">Ajouter au panier</button>
+                                <button id="add-to-cart-button">Ajouter au panier</button>
                             </div>
-
                         </div>
                     </article>
                 </section>
