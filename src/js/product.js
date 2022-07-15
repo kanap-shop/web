@@ -1,4 +1,5 @@
-import { $id } from "./helper";
+import { $id } from "./helpers/dom";
+import { getCart, saveCart } from "./helpers/cart";
 
 const loadProduct = () => {
     const url = new URL(window.location.href);
@@ -21,7 +22,7 @@ const loadProduct = () => {
                 }
                 const color = $id("colors").value;
 
-                const cart = null; //getCart();
+                const cart = getCart();
                 const productInCart = cart.find(
                     (x) => x._id == product._id && x.color == color,
                 );
@@ -35,7 +36,7 @@ const loadProduct = () => {
                     });
                 }
 
-                //saveCart(cart);
+                saveCart(cart);
             });
         })
         .catch(() => (window.location.href = "index.html"));
