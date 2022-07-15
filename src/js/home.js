@@ -1,12 +1,12 @@
+import { $id } from "./helper";
+
 // TODO: add loader
 
 const loadProducts = () =>
     fetch("http://localhost:3000/api/products")
         .then((response) => response.json())
         .then((products) => {
-            document.getElementById("items").innerHTML = products
-                .map(makeProductCard)
-                .join("\n");
+            $id("items").innerHTML = products.map(makeProductCard).join("\n");
         })
         // TODO: display error in UI
         .catch(console.error);
