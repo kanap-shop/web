@@ -24,9 +24,11 @@
         "prettier"
     ],
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
     "rules": {
-        "prettier/prettier": 2
+        "prettier/prettier": 2,
+        "no-unused-vars": 0
     }
 }
