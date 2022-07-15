@@ -14,7 +14,7 @@ module.exports = {
     entry: {
         index: ["./src/css/style.css", "./src/js/home.js"],
         product: ["./src/css/style.css", "./src/css/product.css", "./src/js/product.js"],
-        cart: ["./src/css/style.css", "./src/css/cart.css"],
+        cart: ["./src/css/style.css", "./src/css/cart.css", "./src/js/cart.js"],
         confirmation: ["./src/css/style.css", "./src/css/confirmation.css"]
     },
     mode: "development",

@@ -52,70 +52,44 @@
     
         <main class="limited-width-block-container">
             <div class="limited-width-block" id="limited-width-block">
-                <div class="cartAndFormContainer" id="cartAndFormContainer">
+                <div class="cart-and-form-container" id="cart-and-form-container">
                     <h1>Votre panier</h1>
                     <section class="cart">
                         <section id="cart-items">
-                            <!--  <article class="cart-item" data-id="{product-ID}" data-color="{product-color}">
-                                <div class="cart-item-img">
-                                <img src="../images/product01.jpg" alt="Photographie d'un canapé">
-                                </div>
-                                <div class="cart-item-content">
-                                <div class="cart-item-content-description">
-                                <h2>Nom du produit</h2>
-                                <p>Vert</p>
-                                <p>42,00 €</p>
-                                </div>
-                                <div class="cart-item-content-settings">
-                                <div class="cart-item-content-settings-quantity">
-                                <p>Qté : </p>
-                                <input type="number" class="itemQuantity" name="itemQuantity" min="1" max="100" value="42">
-                                </div>
-                                <div class="cart-item-content-settings-delete">
-                                <p class="deleteItem">Supprimer</p>
-                                </div>
-                                </div>
-                                </div>
-                                </article> -->
                         </section>
                         <div class="cart-price">
                             <p>
-                                Total (<span id="totalQuantity">
-                                    <!-- 2 -->
-                                </span>
-                                articles) : <span id="totalPrice">
-                                    <!-- 84,00 -->
-                                </span> €
+                                Total (<span id="total-quantity"></span> articles) : 
+                                <span id="total-price"></span> €
                             </p>
                         </div>
                         <div class="cart-order">
-                            <form method="get" class="cart-order-form">
+                            <form method="get" class="cart-order-form" onsubmit="placeOrder(event)">
                                 <div class="cart-order-form-question">
                                     <label for="firstName">Prénom: </label>
                                     <input type="text" name="firstName" id="firstName" required>
-                                    <p id="firstNameErrorMsg">
-                                        <!-- ci est un message d'erreur -->
+                                    <p id="firstName-error">
                                     </p>
                                 </div>
                                 <div class="cart-order-form-question">
                                     <label for="lastName">Nom: </label>
                                     <input type="text" name="lastName" id="lastName" required>
-                                    <p id="lastNameErrorMsg"></p>
+                                    <p id="lastName-error"></p>
                                 </div>
                                 <div class="cart-order-form-question">
                                     <label for="address">Adresse: </label>
                                     <input type="text" name="address" id="address" required>
-                                    <p id="addressErrorMsg"></p>
+                                    <p id="address-error"></p>
                                 </div>
                                 <div class="cart-order-form-question">
                                     <label for="city">Ville: </label>
                                     <input type="text" name="city" id="city" required>
-                                    <p id="cityErrorMsg"></p>
+                                    <p id="city-error"></p>
                                 </div>
                                 <div class="cart-order-form-question">
                                     <label for="email">Email: </label>
                                     <input type="email" name="email" id="email" required>
-                                    <p id="emailErrorMsg"></p>
+                                    <p id="email-error"></p>
                                 </div>
                                 <div class="cart-order-form-submit">
                                     <input type="submit" value="Commander !" id="order">
