@@ -1,4 +1,4 @@
-import { $id } from "./helper";
+import { $id } from "./helpers/dom";
 
 // TODO: add loader
 
