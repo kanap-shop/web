@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "Front end of the kanap-shop.tk website",
     "scripts": {
-        "lint": "eslint src/**/*.js public/*.html && stylelint src/**/*.css",
-        "lint:fix": "eslint src/**/*.js public/*.html --fix && stylelint src/**/*.css --fix",
+        "lint": "eslint src public --ext .js,.html && stylelint src/css/**/*.css",
+        "lint:fix": "eslint src public --ext .js,.html --fix && stylelint src/css/**/*.css --fix",
         "serve": "webpack serve --open --config webpack.dev.js",
         "build": "NODE_ENV=production webpack --config webpack.prod.js"
     },
