@@ -2,6 +2,9 @@ import { $id } from "./helpers/dom";
 import { getCart, saveCart, clearCart } from "./helpers/cart";
 import { isEmail, noNumeric } from "./helpers/validators";
 
+/**
+ * Load the current session's cart in the UI
+ */
 const loadCart = () => {
     const cart = getCart();
 
@@ -11,6 +14,21 @@ const loadCart = () => {
     updateCartMetadata(cart);
 };
 
+/**
+ * Update cart price and quantity
+ *
+ * @param {{
+ *     colors: string[];
+ *     _id: string;
+ *     name: string;
+ *     price: number;
+ *     imageUrl: string;
+ *     description: string;
+ *     altTxt: string;
+ *     color: string;
+ *     quantity: number;
+ * }[]} cart Array of items in cart
+ */
 const updateCartMetadata = (cart) => {
     $id("total-quantity").innerText = cart.reduce(
         (acc, x) => acc + x.quantity,
@@ -32,6 +50,21 @@ const updateCartMetadata = (cart) => {
         .catch(console.error);
 };
 
+/**
+ * Generate HTML code that represents a product in cart
+ *
+ * @param {{
+ *     altTxt: string;
+ *     colors: string[];
+ *     description: string;
+ *     imageUrl: string;
+ *     name: string;
+ *     price: number;
+ *     _id: string
+ * }} product The product
+ * @param {number} index Product index in cart
+ * @returns {string} The HTML
+ */
 const makeCartProduct = (product, index) => `
     <article class="cart-item" data-index="${index}" data-id="${product._id}" data-color="${product.color}">
         <div class="cart-item-img">
@@ -55,6 +88,11 @@ const makeCartProduct = (product, index) => `
         </div>
     </article>`;
 
+/**
+ * Remove product from cart by index
+ *
+ * @param {number} index Product index in cart
+ */
 const removeCartProduct = (index) => {
     const cart = getCart();
     cart.splice(index, 1);
@@ -66,6 +104,12 @@ const removeCartProduct = (index) => {
     updateCartMetadata(cart);
 };
 
+/**
+ * Update a specific product in cart by index
+ *
+ * @param {*} event
+ * @param {number} index Product index in cart
+ */
 const updateCartProduct = (event, index) => {
     const cart = getCart();
     cart[index].quantity = Number.parseInt(event.target.value);
@@ -74,6 +118,9 @@ const updateCartProduct = (event, index) => {
     updateCartMetadata(cart);
 };
 
+/**
+ * Validation rules for a product
+ */
 const rules = [
     {
         id: "firstName",
@@ -97,8 +144,15 @@ const rules = [
     },
 ];
 
+/**
+ * Place an order with current products in cart
+ *
+ * @param {*} event The event
+ */
 const placeOrder = (event) => {
     event.preventDefault();
+
+    console.log(event);
 
     const data = getAndValidateData(event.target);
     if (data === null) {
@@ -135,6 +189,12 @@ const placeOrder = (event) => {
         .catch(console.error);
 };
 
+/**
+ * Extract form's datas and validate them
+ *
+ * @param {*} target Form
+ * @returns {{[key: string]: string | number} | null} If datas was validated, the datas. Otherwise, `null`
+ */
 const getAndValidateData = (target) => {
     let success = true;
     let values = {};
