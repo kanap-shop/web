@@ -15,7 +15,7 @@ module.exports = {
         index: ["./src/css/style.css", "./src/js/home.js"],
         product: ["./src/css/style.css", "./src/css/product.css", "./src/js/product.js"],
         cart: ["./src/css/style.css", "./src/css/cart.css", "./src/js/cart.js"],
-        confirmation: ["./src/css/style.css", "./src/css/confirmation.css"]
+        confirmation: ["./src/css/style.css", "./src/css/confirmation.css", "./src/js/confirmation.js"]
     },
     mode: "development",
     devtool: "source-map",
@@ -69,7 +69,6 @@ module.exports = {
     optimization: {
         minimizer: [
             new UglifyJsPlugin({
-                cache: true,
                 parallel: true,
                 sourceMap: true
             }),
