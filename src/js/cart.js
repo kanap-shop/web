@@ -100,9 +100,14 @@ const rules = [
 const placeOrder = (event) => {
     event.preventDefault();
 
-    const data = validateData(event.target);
+    const data = getAndValidateData(event.target);
+    if (data === null) {
+        return;
+    }
+
     const cart = getCart();
-    if (!data) {
+    if (cart.length === 0) {
+        // TODO: display error
         return;
     }
 
@@ -130,7 +135,7 @@ const placeOrder = (event) => {
         .catch(console.error);
 };
 
-const validateData = (target) => {
+const getAndValidateData = (target) => {
     let success = true;
     let values = {};
 
