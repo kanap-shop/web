@@ -9,8 +9,10 @@ const loadProduct = () => {
     fetch(`http://localhost:3000/api/products/${productId}`)
         .then((response) => response.json())
         .then((product) => {
+            document.title = product.name;
+
             $id("product-image").innerHTML = makeProductImage(product);
-            $id("title").title = product.name;
+            $id("title").innerText = product.name;
             $id("price").innerText = product.price;
             $id("description").innerText = product.description;
             $id("colors").innerHTML = makeProductColorsSelect(product);
