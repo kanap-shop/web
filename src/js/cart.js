@@ -152,8 +152,6 @@ const rules = [
 const placeOrder = (event) => {
     event.preventDefault();
 
-    console.log(event);
-
     const data = getAndValidateData(event.target);
     if (data === null) {
         return;
@@ -183,7 +181,6 @@ const placeOrder = (event) => {
         .then((response) => response.json())
         .then((data) => {
             clearCart();
-            console.log("ok");
             window.location.href = `./confirmation.html?order-id=${data.orderId}`;
         })
         .catch(console.error);
