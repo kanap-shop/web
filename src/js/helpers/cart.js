@@ -39,6 +39,7 @@ export const getCart = () => {
  * }[]} cart The new cart
  */
 export const saveCart = (cart) => {
+    cart = cart.sort((a, b) => a.name.localeCompare(b.name));
     sessionStorage.setItem("cart", JSON.stringify(cart));
 };
 
