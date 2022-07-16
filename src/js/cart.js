@@ -1,6 +1,6 @@
 import { $id } from "./helpers/dom";
 import { getCart, saveCart, clearCart } from "./helpers/cart";
-import { noNumeric } from "./helpers/validators";
+import { isEmail, noNumeric } from "./helpers/validators";
 
 const loadCart = () => {
     const cart = getCart();
@@ -93,7 +93,7 @@ const rules = [
     },
     {
         id: "email",
-        validators: [],
+        validators: [isEmail],
     },
 ];
 
